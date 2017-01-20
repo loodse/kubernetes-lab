@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: redis
+  template:
+    metadata:
+      name: redis
+      labels:
+        name: redis
+        role: master
+        visualize: "true"
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        ports:
+        - name: redis-server
+          containerPort: 6379
