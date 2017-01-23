@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
-kind: ReplicationController
-apiVersion: v1
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
 metadata:
   name: helloworldui-controller-latest
   labels:
@@ -24,8 +24,9 @@ metadata:
 spec:
   replicas: 2
   selector:
-    name: helloworldui
-    version: latest
+    matchLabels:
+      name: helloworldui
+      version: latest
   template:
     metadata:
       name: helloworldui
