@@ -16,7 +16,7 @@
 apiVersion: extensions/v1beta1
 kind: ReplicaSet
 metadata:
-  name: helloworldui-controller-v2
+  name: helloworldui-v2
   labels:
     name: helloworldui
     version: v2

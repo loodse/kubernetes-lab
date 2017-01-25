@@ -16,7 +16,7 @@
 apiVersion: extensions/v1beta1
 kind: ReplicaSet
 metadata:
-  name: guestbookservice-controller-latest
+  name: guestbookservice-latest
   labels:
     name: guestbookservice
     version: latest

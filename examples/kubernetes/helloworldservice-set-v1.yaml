@@ -16,7 +16,7 @@
 apiVersion: extensions/v1beta1
 kind: ReplicaSet
 metadata:
-  name: helloworldservice-controller-v1
+  name: helloworldservice-v1
   labels:
     name: helloworldservice
     version: "1.0"
