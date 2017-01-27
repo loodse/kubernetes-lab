@@ -8,8 +8,12 @@ spec:
     matchLabels:
       name: mysql
   template:
-    spec: 
-      containers: 
+    metadata:
+      name: mysql
+      labels:
+        name: mysql
+    spec:
+      containers:
       - name: mysql
         resources:
           limits:
@@ -21,7 +25,7 @@ spec:
           value: yourpassword
         - name: MYSQL_DATABASE
           value: app
-        ports: 
+        ports:
         - containerPort: 3306
           name: mysql
         volumeMounts:
@@ -37,4 +41,3 @@ spec:
           # This GCE PD must already exist.
             pdName: mysql-disk
             fsType: ext4
-
