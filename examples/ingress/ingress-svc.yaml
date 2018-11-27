@@ -6,6 +6,10 @@ metadata:
 spec:
   rules:
     ### DNS must set before
+    #
+    ### to test without DNS use:
+    ### curl --header 'Host: my.test.com' 'http://ELB/the_url_to_test'
+    #
   - host: my.test.com
     http:
       paths:
