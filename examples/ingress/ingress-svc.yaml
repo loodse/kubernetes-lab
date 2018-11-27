@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: debug
+  namespace: default
+spec:
+  rules:
+    ### DNS must set before
+  - host: my.test.com
+    http:
+      paths:
+      - backend:
+          serviceName: http-svc
+          servicePort: http
+        path: /
