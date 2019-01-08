@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+# TODO: Make functional
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      # TODO: Make functional
+  template:
+    metadata:
+      # TODO: Make functional
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+        # TODO: Make functional
+        ports:
+        # TODO: Make functional
+        volumeMounts:
+        # TODO: Make functional
+      volumes:
+      # TODO: Make functional
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql
+spec:
+  storageClassName: standard
+  # TODO: Make functional

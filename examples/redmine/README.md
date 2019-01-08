@@ -4,6 +4,8 @@
 
 Deploy a high available [Redmine](https://www.redmine.org/) to Kubernetes.
 
+Broken manifests are inside the task folder - those must be fixed.
+
 ## Requirements
 
 - Deploy Redmine as Deployment
@@ -17,6 +19,10 @@ Deploy a high available [Redmine](https://www.redmine.org/) to Kubernetes.
 ### LoadBalancer
 
 Information on how to create a LoadBalancer: https://kubernetes.io/docs/concepts/services-networking/#loadbalancer
+
+### Deployments
+
+Information on Deployments: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
 ### Redmine 
 
