@@ -1,22 +1,17 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: ReplicaSet
 metadata:
-  name: hello-kubernetes
+  name: my-replicaset
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: hello-kubernetes
+      app: my-app
   template:
     metadata:
       labels:
-        app: hello-kubernetes
+        app: another-app
     spec:
       containers:
-      - name: hello-kubernetes
-        image: paulbouwer/hello-kubernetes:1.5
-        ports:
-        - containerPort: 8080
-        env:
-        - name: MESSAGE
-          value: I just deployed this on Kubernetes!
+      - image: my-image
+        name: my-container
