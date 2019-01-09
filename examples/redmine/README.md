@@ -26,6 +26,8 @@ Information on Deployments: https://kubernetes.io/docs/concepts/workloads/contro
 
 ### Redmine 
 
+The container listens on port 3000.
+
 Redmine has some important environment variables which should be used to configure it:
   
 `REDMINE_DB_MYSQL`
