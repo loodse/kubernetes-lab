@@ -1,7 +1,0 @@
-replicaCount: 1
-
-image:
-  repository: paulbouwer/hello-kubernetes
-  tag: 1.5
-
-message: "I just deployed this on Kubernetes!"
