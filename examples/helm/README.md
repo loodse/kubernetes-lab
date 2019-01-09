@@ -65,7 +65,6 @@ MY_NAMESPACE=default kubectl run \
 kubectl top pod
 ```
 
-
 ### Check HPA(Horizontal Pod Autoscaler)
 
 ```bash
