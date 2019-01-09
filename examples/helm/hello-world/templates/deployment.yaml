@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-kubernetes
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   selector:
     matchLabels:
       app: hello-kubernetes
@@ -14,9 +14,16 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        image: paulbouwer/hello-kubernetes:1.5
         ports:
         - containerPort: 8080
         env:
         - name: MESSAGE
-          value: {{ .Values.message }}
+          value: "I just deployed this on Kubernetes!"
+        resources:
+          limits:
+            cpu: 200m
+            memory: 100Mi
+          requests:
+            cpu: 5m
+            memory: 78Mi
