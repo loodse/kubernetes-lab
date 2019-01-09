@@ -58,3 +58,9 @@ MY_NAMESPACE=default kubectl run \
   --image=busybox \
   --command -- /bin/sh -c "while true; do wget -q -O /dev/null http://hello-kubernetes:8080; done"
 ```
+
+### Check resource usage of pods
+
+```bash
+kubectl top pod
+```
