@@ -13,14 +13,13 @@ hpa:
   # If disabled, no HPA must be deployed
   enabled: true
   minReplicas: 1
-  maxReplicas: 10
+  maxReplicas: 25
   targetCPUUtilizationPercentage: 50
 
 resources:
-  resources:
-    limits:
-      cpu: 200m
-      memory: 100Mi
-    requests:
-      cpu: 5m
-      memory: 78Mi
+  limits:
+    cpu: 200m
+    memory: 200Mi
+  requests:
+    cpu: 100m
+    memory: 100Mi

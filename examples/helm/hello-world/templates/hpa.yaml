@@ -9,4 +9,4 @@ spec:
     apiVersion: extensions/v1beta1
     kind: Deployment
     name: hello-kubernetes
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 75
