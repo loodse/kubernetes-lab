@@ -1,10 +1,10 @@
-# Helm task - hello-kubernetes
+# Helm task - hello-world
 
 ## Objectives
 
 Create a helm chart for our hello-kubernetes application so others can reuse it.
 
-A chart which contains the manifests exists in the hello-kubernetes folder.
+A chart which contains the manifests exists in the hello-world folder.
 All manifests are still "static" and need some templating.
 A values.yaml has already been prepared for you.
 
@@ -29,13 +29,15 @@ Most commands below use a placeholder variable `$MY_NAMESPACE` which must either
 
 ### Install a chart
 ```bash
-helm install --namespace $MY_NAMESPACE -n hello-kubernetes ./hello-kubernetes
+# This will generate a random release name
+helm install --namespace $MY_NAMESPACE ./hello-world
+# If a specific release name is desired, the -n parameter can be used to specify the name
 ```
 
 ### Upgrade a release
 ```bash
 # !!! Take the release name you got during the installation !!!
-helm upgrade --namespace $MY_NAMESPACE $RELEASE_NAME ./hello-kubernetes
+helm upgrade --namespace $MY_NAMESPACE $RELEASE_NAME ./hello-world
 ```
 
 ### Delete a release
