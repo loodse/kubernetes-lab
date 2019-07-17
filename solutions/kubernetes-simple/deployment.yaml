@@ -8,7 +8,11 @@ spec:
     matchLabels:
       app: blue
   strategy:
-    type: Recreate
+#    type: Recreate
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 2
   template:
     metadata:
       labels:
