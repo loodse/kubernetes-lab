@@ -3,20 +3,23 @@ kind: Deployment
 metadata:
   name: my-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: blue
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: my-app
+        app: blue
     spec:
       containers:
-      - image: nginx
+      - image: gcr.io/kuar-demo/kuard-amd64:green
         name: my-container
         ports:
-          - containerPort: 80
+          - containerPort: 8080
+            hostPort: 80
             name: http
         env:
           - name: TEST
