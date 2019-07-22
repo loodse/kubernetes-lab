@@ -12,7 +12,7 @@ Broken manifests are inside the task folder - those must be fixed.
 - Use a LoadBalancer or NodePort service
 - Deploy a MySQL with a PersistentVolumeClaim
 - Use a Service for the MySQL
-
+- Replace the MySQL Deployment with a stateful set and with volumeClaimTemplates.
 
 ## Hints
 
@@ -24,6 +24,14 @@ Information on how to create a LoadBalancer: https://kubernetes.io/docs/concepts
 
 Information on Deployments: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
 
+### StatefulSets
+
+Information on StatefulSets: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+
+### MYSQL
+- The mysql container is listing on the port 3306.
+- MYSQL also needs a password set over the environment variable `MYSQL_ROOT_PASSWORD`
+ 
 ### Redmine 
 
 The container listens on port 3000.

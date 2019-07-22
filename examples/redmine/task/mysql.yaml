@@ -21,7 +21,7 @@ spec:
       - image: mysql:5.6
         name: mysql
         env:
-        # TODO: Make functional
+        # TODO: Make functional and set a password
         ports:
         # TODO: Make functional
         volumeMounts:
@@ -35,4 +35,4 @@ metadata:
   name: mysql
 spec:
   storageClassName: standard
-  # TODO: Make functional
+  # TODO: Make functional and request at least 20 Gi
