@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: volume-example
 spec:
+  terminationGracePeriodSeconds: 1
   containers:
     - name: nginx
       image: nginx:stable-alpine
