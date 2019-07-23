@@ -60,4 +60,4 @@ spec:
 
 
 ## 3. Create load
-# kubectl run -i --tty load-generator2 --image=alpine/bombardier -- -c 200 -d 100s -l http://web.default.svc.cluster.local
+# kubectl run -i --tty load-generator --image=alpine/bombardier -- -c 200 -d 100s -l http://web.default.svc.cluster.local
