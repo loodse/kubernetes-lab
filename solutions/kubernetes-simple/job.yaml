@@ -1,0 +1,22 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cron-job
+spec:
+  schedule: "*/1 * * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
+#  suspend: true
+  jobTemplate:
+    metadata:
+      name: cron-job
+    spec:
+      template:
+        spec:
+          terminationGracePeriodSeconds: 5
+          containers:
+            - name: pi
+              image: perl
+              command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+          restartPolicy: Never
+      backoffLimit: 4

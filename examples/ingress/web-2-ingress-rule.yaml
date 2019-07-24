@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: web-2
+  name: web-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: web-2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        run: web-2
+    spec:
+      containers:
+      - image: loodse/demo-www
+        name: web-2
+        ports:
+        - containerPort: 80
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: web-2
+  name: web-2
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: web-2
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web-ingress-rule
+  namespace: default
+spec:
+  rules:
+    ### DNS must set before
+    #
+    ### to test without DNS use:
+    ### curl --header 'Host: my.web-2.com' 'http://ELB/the_url_to_test'
+    #
+    - host: my.web-2.com
+      http:
+        paths:
+          - backend:
+              serviceName: web-2
+              servicePort: http
+            path: /

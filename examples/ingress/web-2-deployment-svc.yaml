@@ -1,0 +1,40 @@
+# Second service to demo routing
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: web-2
+  name: web-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: web-2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        run: web-2
+    spec:
+      containers:
+      - image: loodse/demo-www
+        name: web-2
+        ports:
+        - containerPort: 80
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: web-2
+  name: web-2
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: web-2
