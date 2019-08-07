@@ -4,5 +4,9 @@ metadata:
   name: my-nginx
 spec:
   containers:
-  - image: nginx
-    name: my-nginx
+    - image: nginx
+      name: my-nginx
+    ### optional side car (with debug tools)
+    - image: nicolaka/netshoot
+      name: debug
+      command: ["bash","-c", "ping my-nginx"]
