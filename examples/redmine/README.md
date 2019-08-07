@@ -6,8 +6,8 @@ Deploy a high available [Redmine](https://www.redmine.org/) to Kubernetes.
 
 Broken manifests are inside the task folder - those must be fixed.
 
-## Requirements
-
+## TASKS
+- Read the following Hints
 - Deploy Redmine as Deployment
 - Use a LoadBalancer or NodePort service
 - Deploy a MySQL with a PersistentVolumeClaim
