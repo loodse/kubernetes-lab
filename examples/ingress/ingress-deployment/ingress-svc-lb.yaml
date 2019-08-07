@@ -11,11 +11,14 @@ spec:
     - name: http
       port: 80
       targetPort: 80
+      nodePort: 30080
     - name: https
       port: 443
       targetPort: 80
+      nodePort: 30443
   selector:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
   sessionAffinity: ClientIP
+  ### type: NodePort would also work
   type: LoadBalancer

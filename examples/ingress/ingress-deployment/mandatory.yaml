@@ -1,3 +1,5 @@
+### copied from https://github.com/kubernetes/ingress-nginx/
+
 apiVersion: v1
 kind: Namespace
 metadata:
