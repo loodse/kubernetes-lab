@@ -1,7 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment
+  name: test-deployment
 spec:
-  replicas: 2
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-deployment
   # use replica set definition
+  template:
+    metadata:
+      labels:
+        app: test-deployment
+    spec:
+      containers:
+        - image: helloworld
+          name: helloworld
