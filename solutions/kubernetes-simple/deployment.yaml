@@ -23,7 +23,6 @@ spec:
         name: my-container
         ports:
           - containerPort: 8080
-            hostPort: 80
             name: http
         env:
           - name: TEST
