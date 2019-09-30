@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
   - image: <image-name>
-    name: <container-name>
+    name: my-container
